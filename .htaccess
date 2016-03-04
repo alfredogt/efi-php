@@ -1,0 +1,14 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+Rewriterule ^install$ index.php?op=install
+Rewriterule ^install/([a-z]+)$ index.php?op=install&p=$1
+Rewriterule ^peticion_ajax$ index.php?ajax=true
+Rewriterule ^index$ index.php?m=0&f=2&p=index
+Rewriterule ^inicio$ index.php?m=0&f=2&p=index
+Rewriterule ^login$ index.php?m=0&f=2&p=login
+Rewriterule ^(\d+)/(\d+)/([a-z]+)$ index.php?m=$1&f=$2&p=$3
+Rewriterule ^(\d+)/(\d+)/(\d+)/$ index.php?m=$1&f=$2&p=$3
+Rewriterule ^index.php/(\d+)/(\d+)/(\d+)/$ index.php?m=$1&f=$2&p=$3
